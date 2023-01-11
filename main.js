@@ -1,14 +1,14 @@
 $(document).ready(function () {
 
-    /*$('#menu').click(function () {
+    $('#menu').click(function () {
         $(this).toggleClass('fa-times')
         $('.navbar').toggleClass('nav-toggle')
-    })*/
+    })
 
     $(window).on('scroll load', function () {
 
-        //$('#menu').removeClass('fa-times')
-        //$('.navbar').removeClass('nav-toggle')
+        $('#menu').removeClass('fa-times')
+        $('.navbar').removeClass('nav-toggle')
 
         if ($(window).scrollTop() > 60) {
             $('header').addClass('header-active')
@@ -16,7 +16,7 @@ $(document).ready(function () {
             $('header').removeClass('header-active')
         }
 
-        /*$('section').each(function () {
+        $('section').each(function () {
 
             let top = $(window).scrollTop()
             let height = $(this).height()
@@ -28,7 +28,7 @@ $(document).ready(function () {
                 $('.navbar').find(`[href="#${id}"]`).addClass('active')
             }
 
-        })*/
+        })
 
     })
 

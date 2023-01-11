@@ -104,7 +104,7 @@ header {
 .giftLogo {
     position: absolute;
     top: -25px;
-    left: -155px;
+    left: 15px;
     height: 12rem;  
     margin: 0;  
     padding: 0; 
@@ -156,7 +156,7 @@ header.header-active .navbar a {        /* Javascript */
 /* Inicio Seccion Home */
 .home {
     min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(/images/home.jpg) no-repeat; /* Agrega efecto sombre obscura */
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(https://imagizer.imageshack.com/img924/765/HjWFDl.jpg) no-repeat; /* Agrega efecto sombre obscura */
     background-size: cover; /* acomoda la imagen */
     background-position: center;
     background-attachment: fixed; /* Ancla la imagen al fondo */
@@ -194,7 +194,7 @@ header.header-active .navbar a {        /* Javascript */
 
 
 /* Inicio Seccion About */
-.about .row {
+.about .row {    
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -245,20 +245,58 @@ header.header-active .navbar a {        /* Javascript */
     text-align: center;    
 }
 
-.service .box-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+.service .box-container {    
+    overflow: hidden;
+    display: grid;        
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);            
+    grid-template-areas: 
+            "s1 s2 s3 b"
+            "s4 s5 s6 b";
+    gap: 5px;
+    justify-items: center;
+    
 }
 
-.service .box-container .box {
+.s1 {
+    grid-area: s1;
+}
+
+.s2 {
+    grid-area: s2;
+}
+
+.s3 {
+    grid-area: s3;
+}
+
+.s4 {
+    grid-area: s4;
+}
+
+.s5 {
+    grid-area: s5;
+}
+
+.s6 {
+    grid-area: s6;
+}
+
+.boxing {
+    grid-area: b;
+}
+
+.service .box-container .box {    
     height: 33rem;
     width: 45rem;
     margin: 2rem;
     overflow: hidden;
     position: relative;
     cursor: pointer;
+}
+
+.service .box-container .box.boxing {
+    height: calc( ((33rem) * 2) + 4rem );    
 }
 
 .service .box-container .box img {
@@ -300,7 +338,7 @@ header.header-active .navbar a {        /* Javascript */
 
 
 
-/* Inicio Seccion Service */
+/* Inicio Seccion Address */
 .address {
     min-height: 100vh;
     text-align: center;
@@ -318,62 +356,7 @@ header.header-active .navbar a {        /* Javascript */
     justify-content: center;
     flex-wrap: wrap;
 }
-/*
-.trainer .box-container .box {
-    height: 40rem;
-    margin: 1.5rem 1rem;
-    width: 27rem;
-    border: .5rem solid var(--orange);
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 .3rem .5rem #000;
-}
-
-.trainer .box-container .box img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.trainer .box-container .box .info {
-    color: #333;
-    background: #fff;
-    border-top: .5rem solid var(--orange);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    font-size: 2rem;
-    width: 100%;
-    padding: 1rem 0;
-}
-
-.trainer .box-container .box .share {
-    position: absolute;
-    top: 1rem;
-    right: -100%;
-    display: flex;
-    flex-flow: column;
-}
-
-.trainer .box-container .box:hover .share {
-    right: 0;
-}
-
-.trainer .box-container .box .share a {
-    height: 4rem;
-    width: 4.5rem;
-    line-height: 4rem;
-    color: #333;
-    font-size: 2rem;
-    background: #fff;
-    margin: .5rem 1rem;
-}
-
-.trainer .box-container .box .share a:hover {
-    background: var(--orange);
-    color: #fff;
-}*/
-/* Fin Seccion Service */
+/* Fin Seccion Address */
 
 
 
@@ -381,8 +364,25 @@ header.header-active .navbar a {        /* Javascript */
 .plan {
     min-height: 100vh;
     text-align: center;
-    background: #eee;
+    background: none;
+    position: relative;
 }
+
+.plan .heading {
+    color: #fff;
+}
+
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 
 .plan .box-container {
     display: flex;
@@ -393,13 +393,14 @@ header.header-active .navbar a {        /* Javascript */
 
 .plan .box-container .box {
     background: #fff;
-    margin: 2rem;
+    margin: 20rem 5rem;
     width: 30rem;
-    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+    box-shadow: 0 .3rem .5rem rgba(255, 255, 255, 0.3);
+    opacity: .8;
 }
 
 .plan .box-container .box:hover {
-    transform: scale(1.04);
+    transform: scale(1.2);
 }
 
 .plan .box-container .box .title {
@@ -438,6 +439,11 @@ header.header-active .navbar a {        /* Javascript */
 
 .plan .box-container .box ul li i {
     color: var(--orange);
+    padding: 0 .5rem;
+}
+
+.plan .box-container .box ul li i.no{
+    color: rgb(155, 37, 37);
     padding: 0 .5rem;
 }
 
