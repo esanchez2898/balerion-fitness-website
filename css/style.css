@@ -99,6 +99,8 @@ header {
     left: 0;
     z-index: 1000;
     padding: 2rem 3rem;
+    background: #333;
+    opacity: .9;
 }
 
 .giftLogo {
@@ -141,11 +143,12 @@ header #menu {  /* Icono del menu */
 }
 
 header.header-active { /* Javascript - Se agrega la clase cuando se hace scroll 60 pixeles */
-    background: #fff;
+    background: rgb(115, 18, 18);
     box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .3);
+    color: #333;
 }
 
-header.header-active .logo,
+header.header-active,
 header.header-active .navbar a {        /* Javascript */
     color: #333;
 }
