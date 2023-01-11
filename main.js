@@ -1,3 +1,8 @@
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+AOS.init()
+
 $(document).ready(function () {
 
     $('#menu').click(function () {
